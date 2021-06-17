@@ -16,7 +16,7 @@ The image is based on `debian/stable-slim`, and includes the following:
   + `virtualenv`
 - Java
   + `JDK8` (OpenJ9 version)
-  + `Gradle` 6.6.1
+  + `Gradle` 7.1.0
 - Other dependencies
   + `make`
   + `git`

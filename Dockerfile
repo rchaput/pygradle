@@ -23,7 +23,7 @@ RUN curl -sSL "${JAVA_URL}" -o openjdk.tar.gz && \
 
 # Install Gradle
 ENV GRADLE_HOME /opt/gradle
-ENV GRADLE_VERSION 6.6.1
+ENV GRADLE_VERSION 7.1.0
 RUN curl -sSL "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" -o gradle.zip && \
 	unzip gradle.zip && \
 	rm gradle.zip && \
