@@ -1,7 +1,7 @@
 FROM debian:stable-slim
 
 LABEL maintainer="Remy Chaput <rchaput.pro@pm.me>"
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL description="Docker image containing both Python3 and Java/Gradle"
 
 # Install system dependencies (both for installing Java/Gradle and for later)
@@ -11,10 +11,10 @@ ENV OTHER_DEPS="make git openssh-client"
 RUN apt update && \
 	apt install -y --no-install-recommends ${JAVA_DEPS} ${GRADLE_DEPS} ${OTHER_DEPS} 
 
-# Install Java 8 (OpenJ9 for smaller size)
-ENV JAVA_URL https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u265-b01_openj9-0.21.0/OpenJDK8U-jdk_x64_linux_openj9_8u265b01_openj9-0.21.0.tar.gz
+# Install Java 15 (OpenJ9 for smaller size)
+ENV JAVA_URL https://github.com/AdoptOpenJDK/openjdk15-binaries/releases/download/jdk-15.0.2%2B7_openj9-0.24.0/OpenJDK15U-jdk_x64_linux_openj9_15.0.2_7_openj9-0.24.0.tar.gz
 ENV JAVA_HOME /opt/java
-ENV PATH="/opt/java/bin:${PATH}"
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
 RUN curl -sSL "${JAVA_URL}" -o openjdk.tar.gz && \
 	mkdir -p "${JAVA_HOME}" && \
 	tar xzvf openjdk.tar.gz -C "${JAVA_HOME}" --strip-components=1 && \

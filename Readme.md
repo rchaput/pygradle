@@ -15,7 +15,7 @@ The image is based on `debian/stable-slim`, and includes the following:
   + `pip3`
   + `virtualenv`
 - Java
-  + `JDK8` (OpenJ9 version)
+  + `JDK15` (OpenJ9 version)
   + `Gradle` 7.1.0
 - Other dependencies
   + `make`
